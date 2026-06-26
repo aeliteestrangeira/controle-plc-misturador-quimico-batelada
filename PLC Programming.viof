@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="FlowChart" />
+  <Connections>
+    <Connection sKey="Timer" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="RunProcess" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="State" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="RunIntakePump1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="RunIntakePump2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="RunIntakePump3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="RunMixer" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="RunOuttakePump" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="EmergencyFlush" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="State " ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="State = 1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="VE_TempI32_0" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
+    <Connection sKey="VE_TempFloat_0" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
+    <Connection sKey="VE_TempUI16_0" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
+    <Connection sKey="VE_TempI32_1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
+    <Connection sKey="VE_TempFloat_1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
+    <Connection sKey="VE_TempUI16_1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
+    <Connection sKey="VE_TempI32_2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
+    <Connection sKey="VE_TempFloat_2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
+    <Connection sKey="VE_TempUI16_2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
+    <Connection sKey="VE_TempI32_3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
+    <Connection sKey="VE_TempFloat_3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
+    <Connection sKey="VE_TempUI16_3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
+    <Connection sKey="VE_TempI32_4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
+    <Connection sKey="VE_TempFloat_4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
+    <Connection sKey="VE_TempUI16_4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
+    <Connection sKey="VE_TempI32_5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
+    <Connection sKey="VE_TempFloat_5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
+    <Connection sKey="VE_TempUI16_5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="0" />
+  <Cells>
+    <start rung="0" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <NC rung="0" row="4" column="2" cellsHeigh="-1" iSortedIndex="0">
+      <eAddress1 sAddress="RunProcess" sIndex="" dtAddress="Bit" />
+    </NC>
+    <Equal rung="0" row="7" column="2" cellsHeigh="-1" iSortedIndex="3">
+      <eAddress1 sAddress="State" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="0" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilTimer rung="0" row="3" column="6" cellsHeigh="3" iSortedIndex="1" myType="Timer" myTimerCommand="Pause">
+      <eKeyTimer sAddress="Timer" sIndex="" dtAddress="I32" />
+    </coilTimer>
+    <Greater rung="0" row="19" column="6" cellsHeigh="-1" iSortedIndex="18">
+      <eAddress1 sAddress="Timer" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="6" sIndex="" dtAddress="UI8" />
+    </Greater>
+    <Greater rung="0" row="31" column="6" cellsHeigh="-1" iSortedIndex="29">
+      <eAddress1 sAddress="Timer" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="15" sIndex="" dtAddress="UI8" />
+    </Greater>
+    <Equal rung="0" row="31" column="2" cellsHeigh="-1" iSortedIndex="27">
+      <eAddress1 sAddress="State" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="5" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <Equal rung="0" row="27" column="2" cellsHeigh="-1" iSortedIndex="22">
+      <eAddress1 sAddress="State" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="4" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <Equal rung="0" row="21" column="2" cellsHeigh="-1" iSortedIndex="17">
+      <eAddress1 sAddress="State" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="3" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <Equal rung="0" row="17" column="2" cellsHeigh="-1" iSortedIndex="11">
+      <eAddress1 sAddress="State" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="2" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilCopy rung="0" row="15" column="6" cellsHeigh="3" iSortedIndex="12" CopyType="standard">
+      <eKeySource sAddress="1" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="1" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="1" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="RunMixer" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="RunIntakePump2" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="RunIntakePump3" sIndex="" dtAddress="Bit" />
+    </coilCopy>
+    <Equal rung="0" row="12" column="2" cellsHeigh="-1" iSortedIndex="6">
+      <eAddress1 sAddress="State" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="1" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilSet rung="0" row="9" column="6" cellsHeigh="-1" iSortedIndex="7">
+      <eAddress1 sAddress="RunIntakePump1" sIndex="" dtAddress="Bit" />
+    </coilSet>
+    <Greater rung="0" row="9" column="10" cellsHeigh="-1" iSortedIndex="8">
+      <eAddress1 sAddress="Timer" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="2" sIndex="" dtAddress="UI8" />
+    </Greater>
+    <coilCopy rung="0" row="7" column="14" cellsHeigh="5" iSortedIndex="4" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="RunIntakePump1" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="RunIntakePump2" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="RunIntakePump3" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="RunMixer" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="RunOuttakePump" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="EmergencyFlush" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="Timer" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="State " sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilCopy rung="0" row="3" column="14" cellsHeigh="3" iSortedIndex="9" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="2" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="RunIntakePump1" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="State" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <Greater rung="0" row="13" column="14" cellsHeigh="-1" iSortedIndex="13">
+      <eAddress1 sAddress="Timer" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="4" sIndex="" dtAddress="UI8" />
+    </Greater>
+    <coilCopy rung="0" row="16" column="14" cellsHeigh="3" iSortedIndex="14" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="3" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="RunIntakePump2" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="State" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilCopy rung="0" row="20" column="14" cellsHeigh="3" iSortedIndex="19" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="4" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="RunIntakePump3" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="State" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilCopy rung="0" row="24" column="14" cellsHeigh="3" iSortedIndex="24" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="5" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="RunMixer" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="State" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <Greater rung="0" row="23" column="6" cellsHeigh="-1" iSortedIndex="23">
+      <eAddress1 sAddress="Timer" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="10" sIndex="" dtAddress="UI8" />
+    </Greater>
+    <coilSet rung="0" row="27" column="6" cellsHeigh="-1" iSortedIndex="28">
+      <eAddress1 sAddress="RunOuttakePump" sIndex="" dtAddress="Bit" />
+    </coilSet>
+    <coilCopy rung="0" row="31" column="14" cellsHeigh="3" iSortedIndex="30" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="Bit" />
+      <eKeySource sAddress="0" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="RunOuttakePump" sIndex="" dtAddress="Bit" />
+      <eKeyDestination sAddress="State" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+  </Cells>
+  <FlowConnections>
+    <FlowConn From="0" Yes="1" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="1" Yes="3" dirYesFrom="right" dirYesTo="up" No="2" dirNoFrom="left" dirNoTo="up" />
+    <FlowConn From="2" Yes="14" dirYesFrom="right" dirYesTo="up" No="11" dirNoFrom="left" dirNoTo="up" />
+    <FlowConn From="4" Yes="18" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="5" Yes="22" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="6" Yes="21" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="7" Yes="20" dirYesFrom="right" dirYesTo="up" No="6" dirNoFrom="left" dirNoTo="up" />
+    <FlowConn From="8" Yes="4" dirYesFrom="right" dirYesTo="up" No="7" dirNoFrom="left" dirNoTo="up" />
+    <FlowConn From="9" Yes="10" dirYesFrom="right" dirYesTo="up" No="8" dirNoFrom="left" dirNoTo="up" />
+    <FlowConn From="10" Yes="16" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="11" Yes="12" dirYesFrom="right" dirYesTo="up" No="9" dirNoFrom="left" dirNoTo="up" />
+    <FlowConn From="12" Yes="13" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="13" Yes="15" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="16" Yes="17" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="20" Yes="19" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="21" Yes="5" dirYesFrom="right" dirYesTo="up" />
+  </FlowConnections>
+  <Wires />
+  <Comments />
+</VelocioNetworks>
